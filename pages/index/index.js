@@ -8,7 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500
   },
 
   /**
@@ -16,6 +21,7 @@ Page({
    */
   onLoad: function (options) {
     this.getArticles();//获取文章列表
+    this.getbanners();//获取banner
   },
 
   /**
@@ -67,9 +73,25 @@ Page({
 
   },
 
-  getArticles(){
-    WXAPI.cmsArticles().then((res) =>{
+  async getArticles(){
+    WXAPI.cmsArticles('isRecommend').then((res) =>{
+      if(res.code == 0){
+        this.setData({
+          articles: res.data
+        })
+      }
       console.log(res)
+    })
+  }
+,
+  async getbanners(){
+    WXAPI.banners().then((res) => {
+      console.log(res);
+      if(res.code == 0){
+        this.setData({
+          banners: res.data
+        })
+      }
     })
   }
 })

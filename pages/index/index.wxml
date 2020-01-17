@@ -1,2 +1,24 @@
 <!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<view class="container">
+    <swiper class="page-section" indicator-dots="true" indicator-active-color="#fff" autoplay circular>
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image class="swiper-item" src="{{item.picUrl}}" />{{item.title}}
+      </swiper-item>
+    </swiper>
+    <view class="top1">
+      <view wx:for="{{articles}}" wx:key="id" class="top-item">
+        <view class="title">{{item.title}}</view>
+        <view class="text">{{item.descript}}</view>
+      </view>
+    </view>
+  <!-- <view class="page-section page-section-spacing swiper">
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item {{item}}"></view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>  -->
+</view>

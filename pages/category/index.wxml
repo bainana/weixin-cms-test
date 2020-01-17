@@ -1,2 +1,18 @@
 <!--pages/category/index.wxml-->
-<text>pages/category/index.wxml</text>
+<view class="container">
+  <view class="tab">
+    <view class="tab-title">
+      <view class="tab-title-item {{currentCate==item.name? 'active': ''}}" wx:for="{{categories}}" wx:key="id" >
+        <view bindtap="changeCate" data-title="{{item.name}}" data-id="{{item.id}}">{{item.name}}</view>
+      </view>
+    </view>
+    <view class="tab-content">
+        <view class="tab-article" wx:for="{{articles}}" wx:key="id">
+          <view class="pic"><image src="{{item.picUrl}}" /></view>
+          <view class="detail">
+            <view class="article-title">{{item.title}}</view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>
