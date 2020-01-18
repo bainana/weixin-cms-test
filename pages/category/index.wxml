@@ -1,4 +1,5 @@
 <!--pages/category/index.wxml-->
+<wxs src="../../wxs/subutil.wxs" module="tools" />
 <view class="container">
   <view class="tab">
     <view class="tab-title">
@@ -7,10 +8,11 @@
       </view>
     </view>
     <view class="tab-content">
-        <view class="tab-article" wx:for="{{articles}}" wx:key="id">
-          <view class="pic"><image src="{{item.picUrl}}" /></view>
+        <view class="tab-article" wx:for="{{articles}}" wx:key="id" wx:if="{{item.pic}}" bindtap="toDetail" data-id="{{item.id}}">
+          <view class="pic"><image src="{{item.pic}}" /></view>
           <view class="detail">
             <view class="article-title">{{item.title}}</view>
+            <view class="article-desc">{{tools.sub(item.descript)}}</view>
           </view>
       </view>
     </view>

@@ -1,4 +1,5 @@
 // pages/article-detail/index.js
+const WXAPI = require('apifm-wxapi');
 Page({
 
   /**
@@ -12,7 +13,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '加载中',
+    })
+    const id = options.id;
+    console.log(options)
+    WXAPI.cmsArticleDetail(id).then((res)=>{
+      console.log(res)
+      wx.hideLoading();
+      if(res.code == 0){
+        this.setData({
+          article: res.data
+        })
+      }
+    })
   },
 
   /**

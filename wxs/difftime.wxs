@@ -1,0 +1,13 @@
+  var difftime = function(val){
+  var minute = 1000 * 60;
+  var hour = minute * 60;
+  var day = hou * 24;
+  var week = day * 7;
+  var halfmonth = day * 15;
+  var month = day * 30;
+  var year = day * 365;
+  
+  var now = getDate();
+}
+
+// module.exports.difftime = difftime;

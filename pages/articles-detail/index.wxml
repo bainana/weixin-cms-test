@@ -1,2 +1,5 @@
 <!--pages/article-detail/index.wxml-->
-<text>pages/article-detail/index.wxml</text>
+<view class="container">
+  <view class="title">{{article.title}}</view>
+  <view class="time"></view>
+</view>
