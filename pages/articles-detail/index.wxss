@@ -1,1 +1,28 @@
 /* pages/article-detail/index.wxss */
+.title{
+  font-size: 48rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+.content{
+  margin: 20rpx 0 0 ;
+  line-height: 60rpx;
+}
+.article-foot{
+  display: flex;
+  position: fixed;
+  width: 730rpx;
+  height: 100rpx;
+  background: #fff;
+  bottom: 20rpx;
+}
+.article-foot image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.article-foot .input{
+  padding: 0 10rpx;
+}
+.article-foot .input input{
+  border: 1px solid #ccc;
+}

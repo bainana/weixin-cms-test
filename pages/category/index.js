@@ -1,5 +1,6 @@
 // pages/category/index.js
 const WXAPI = require('apifm-wxapi');
+WXAPI.init('bainana');
 Page({
 
   /**
@@ -116,7 +117,6 @@ Page({
     }).then((res)=>{
       wx.hideLoading()
       if(res.code == 0){
-        console.log(res.data)
         this.setData({
           articles: this.data.articles.concat(res.data)
         })

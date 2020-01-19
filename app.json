@@ -5,7 +5,8 @@
     "pages/articles-detail/index",
     "pages/articles/index",
     "pages/my/index",
-    "pages/category/index"
+    "pages/category/index",
+    "pages/comment/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

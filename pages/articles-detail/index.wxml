@@ -1,5 +1,20 @@
 <!--pages/article-detail/index.wxml-->
+<import src="/wxParse/wxParse.wxml" />
 <view class="container">
   <view class="title">{{article.title}}</view>
   <view class="time"></view>
+  <view class="content">
+  <template is="wxParse" data="{{wxParseData:content.nodes}}"></template>
+  </view>
+  <view class="article-foot">
+    <view class="input">
+    <input></input>
+    </view>
+    <view class="comment" bindtap="goComment" data-id="{{article.id}}">评论</view>
+    <view class="weixin">
+    <image src="/images/wechat.png" /></view>
+    <view class="friend">
+      <image src="/images/wechat_share.png" />
+    </view>
+  </view>
 </view>

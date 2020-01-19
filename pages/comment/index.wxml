@@ -1,0 +1,24 @@
+<!--pages/comment/index.wxml-->
+<view class="container">
+  <view class="article-title"></view>
+  <view class="comment-list">
+    <view class="comment" wx:for="{{comments}}" wx:key="id">
+      <view class="comment-content">{{item.content}}</view>
+      <view class="params">
+        <view class="username"></view>
+        <view class="time">{{item.dateAdd}}</view>
+        <view class="praise">点赞</view>
+      </view>
+    </view>
+  </view>
+  <view class="comment-form">
+    <form bindsubmit="bindFormSubmit">
+      <view class="text">
+        <textarea placeholder="请填写评论" placeholder-style="color:red;" name="content" />
+      </view>
+      <view class="button">
+        <button form-type="submit">提交</button>
+      </view>
+    </form>
+  </view>
+</view>

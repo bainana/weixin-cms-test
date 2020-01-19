@@ -1,0 +1,39 @@
+/* pages/comment/index.wxss */
+
+
+.comment-form{
+  width: 100%;
+}
+
+.comment-form .text{
+  border: 1px solid #ccc;
+  min-height: 60rpx;
+}
+.comment-list{
+  width: 100%;
+}
+.comment-list .comment{
+  width: 100%;
+  height: auto;
+  margin: 10rpx 0;
+  border-bottom: 1px dotted #ccc;
+}
+.comment-list .comment .comment-content{
+  width: 100%;
+  height: auto;
+}
+.comment-list .comment .params{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #6c6c6c;
+}
+.comment-list .comment .params .username{
+  float: left;
+}
+.comment-list .comment .params .time{
+  float: left;
+}
+.comment-list .comment .params .praise{
+  float: right
+}

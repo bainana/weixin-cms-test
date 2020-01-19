@@ -1,5 +1,6 @@
 // pages/article-detail/index.js
 const WXAPI = require('apifm-wxapi');
+const wxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -13,6 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    
     wx.showLoading({
       title: '加载中',
     })
@@ -25,6 +27,7 @@ Page({
         this.setData({
           article: res.data
         })
+        wxParse.wxParse('content','html',this.data.article.content,this,5)
       }
     })
   },
@@ -76,5 +79,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goComment(e){
+    console.log(e.currentTarget)
+    const id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/comment/index?id=' + id,
+    })
   }
 })
