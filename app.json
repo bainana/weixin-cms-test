@@ -6,7 +6,8 @@
     "pages/articles/index",
     "pages/my/index",
     "pages/category/index",
-    "pages/comment/index"
+    "pages/comment/index",
+    "pages/wexin/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

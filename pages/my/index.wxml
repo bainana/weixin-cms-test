@@ -3,4 +3,5 @@
   <button bindtap="register">注册</button>
   <button bindtap="login">登录</button>
   <button bindtap="author">授权</button>
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
 </view>

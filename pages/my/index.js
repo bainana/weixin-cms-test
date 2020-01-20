@@ -1,12 +1,16 @@
 // pages/my/index.js
 const WXAPI = require('apifm-wxapi')
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    motto: 'Hello World',
+    userInfo: {},
+    hasUserInfo: false,
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   /**
@@ -78,7 +82,9 @@ Page({
   },
 
   author(e){
-
+    wx.navigateTo({
+      url: '/pages/wexin/index'
+    })
   },
   register(e){
 
@@ -114,6 +120,20 @@ Page({
                     })
                   }
                 })
+              } else {
+                wx.showModal({
+                  title: '请授权',
+                  content: '',
+                });
+                wx.authorize({
+                  scope: 'scope.userInfo',
+                  success() {
+                    console.log('userInfo: success')
+                  },
+                  fail(){
+                    console.log('userIfo: fail')
+                  }
+                })
               }
             },
             fail(err) {
@@ -124,5 +144,14 @@ Page({
       }
     })
     
+  },
+
+  getUserInfo: function (e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
   }
 })
